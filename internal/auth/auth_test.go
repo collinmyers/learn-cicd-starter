@@ -20,13 +20,13 @@ func TestGetAPIKey(t *testing.T) {
 		{
 			name:     "malformed auth header",
 			headers:  map[string][]string{"Authorization": {"Bearer"}},
-			expected: "",
+			expected: "123",
 			err:      ErrMalformedAuthHeader,
 		},
 		{
 			name:     "valid auth header",
 			headers:  map[string][]string{"Authorization": {"ApiKey 123"}},
-			expected: "123",
+			expected: "33333333",
 			err:      nil,
 		},
 	}
