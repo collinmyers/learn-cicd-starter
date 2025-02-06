@@ -31,7 +31,7 @@ jobs:
             run: go install github.com/pressly/goose/v3/cmd/goose@latest
           
           - name: Remove pontential non unix line endings 2
-            run: sed -i 's/\r$//' ./scripts/migrate.sh
+            run: sed -i 's/\r$//' ./scripts/migrateup.sh
 
           - name: Migration
-            run: ./scripts/migrate.sh
+            run: ./scripts/migrateup.sh
