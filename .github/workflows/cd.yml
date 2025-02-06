@@ -8,6 +8,7 @@ jobs:
     Deploy:
         name: Deploy
         runs-on: ubuntu-latest
+        environment: CICD
 
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
