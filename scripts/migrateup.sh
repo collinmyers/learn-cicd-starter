@@ -1,12 +1,8 @@
 #!/bin/bash
 
-set -e  # Exit on error
-
-# Ensure DATABASE_URL is set
-if [ -z "$DATABASE_URL" ]; then
-  echo "Error: DATABASE_URL is not set"
-  exit 1
+if [ -f .env ]; then
+    source .env
 fi
 
-# Run Goose migrations
-goose -dir migrations postgres "$DATABASE_URL" up
+cd sql/schema
+goose turso $DATABASE_URL up
